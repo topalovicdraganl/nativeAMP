@@ -8,7 +8,7 @@ All examples are tested on UltraZed board (http://zedboard.org/product/ultrazed-
 
 All examples are using same Vivado project.
 
-##Provided examples are based on fallowing tutorials:
+## Provided examples are based on fallowing tutorials:
 
     - ug1209 (https://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_3/ug1209-embedded-design-tutorial.pdf)
 
@@ -18,13 +18,13 @@ All examples are using same Vivado project.
 
     - http://zedboard.org/content/ultrazed-eg-starter-kit-tutorial-%E2%80%93-vivado-20164
 
-##Examples:
+## Examples:
 
     1. hello_world_from APU, represent model where APU0 control APU1 execution using CRF_APB.RST_FPD_APU register.
 
     2. hello_world_from RTPU, represent model where APU0 control R0 execution using CRF_APB.RST_LPD_TOP register.
 
-##Short Guide for all exampes from .\nativeAMP\zynqUSP\bm_app:
+## Short Guide for all exampes from .\nativeAMP\zynqUSP\bm_app:
 
     1. navigate to the folder .\nativeAMP\zynqUSP\build_hw\ and run creat_project.cmd script. 
 
