@@ -8,19 +8,23 @@ All examples are tested on UltraZed board (http://zedboard.org/product/ultrazed-
 
 All examples are using same Vivado project.
 
-Provided examples are based on fallowing tutorials:
+##Provided examples are based on fallowing tutorials:
+
     - ug1209 (https://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_3/ug1209-embedded-design-tutorial.pdf)
+
     - ug1169-zynqmp-qemu (https://www.xilinx.com/support/documentation/sw_manuals/xilinx2016_2/ug1169-zynqmp-qemu.pdf)
+
     - https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841820/Zynq+UltraScale+Plus+Restart+solution
+
     - http://zedboard.org/content/ultrazed-eg-starter-kit-tutorial-%E2%80%93-vivado-20164
 
-Examples:
+##Examples:
 
     1. hello_world_from APU, represent model where APU0 control APU1 execution using CRF_APB.RST_FPD_APU register.
 
     2. hello_world_from RTPU, represent model where APU0 control R0 execution using CRF_APB.RST_LPD_TOP register.
 
-Short Guide for all exampes from .\nativeAMP\zynqUSP\bm_app:
+##Short Guide for all exampes from .\nativeAMP\zynqUSP\bm_app:
 
     1. navigate to the folder .\nativeAMP\zynqUSP\build_hw\ and run creat_project.cmd script. 
 
@@ -34,17 +38,22 @@ Short Guide for all exampes from .\nativeAMP\zynqUSP\bm_app:
 
     4. Load Xilinx SDK workspace .\nativeAMP\zynqUSP\bm_app\hello_world_from_APU\SDK_Workspace.
 
+    4. File/New/Other take xilix/Hardware Platfrom specification. Take system_wrapper.hdf from .\nativeAMP\zynqUSP\build_hw\SDK\SDK_Export file. 
+    Name should be setted as system_wrapper_hw_platform_0.
+
     5. Import existing projects:
 
         a. Go to File/Import/General/Existing Projects into workspace
 
         b. Select root directory => .\nativeAMP\zynqUSP\bm_app\hello_world_from_APU\SDK_Workspace
 
+        c. Wait until all sources are rebuilded.
+
     6. navigate to the nativeAMP\zynqUSP\bm_app\hello_world_from_APU\BOOT
 
     7. Run genboot.cmd 
 
     8. copy generated *.bin file on SD
-    
+
     9. Power on Board and observe terminal
 
