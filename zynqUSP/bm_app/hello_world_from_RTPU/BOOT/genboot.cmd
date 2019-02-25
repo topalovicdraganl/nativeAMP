@@ -1,0 +1,1 @@
+c:\Xilinx\SDK\2017.3\bin\unwrapped\win64.o\bootgen.exe -image bootimage.bif -arch zynqmp -w -o i BOOT.BIN
