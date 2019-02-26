@@ -5,5 +5,4 @@ the_ROM_image:
 	[bootloader].\..\SDK_Workspace\fsbl_a53\Debug\fsbl_a53.elf
 	[destination_cpu = a53-0].\..\SDK_Workspace\test_a53_0\Debug\test_a53_0.elf
 	[destination_cpu = a53-1].\..\SDK_Workspace\test_a53_1\Debug\test_a53_1.elf
-	[pmufw_image].\..\SDK_Workspace\pmu_fw\Debug\pmu_fw.elf
 }
