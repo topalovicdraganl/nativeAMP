@@ -70,20 +70,22 @@ int main()
     	// take R0 to reset
     	if (cnt == 10){
     		value = Xil_In32(RST_LPD_TOP);
-    		printf("Reset sequence: 0x%x.\n", value);
-    		value = value || RPU_R50_RESET;
+    		printf("To RESET: RST_LPD_TOP: 0x%x.\n", value);
+    		//preserve already reseted modules: USB1_APB_RESET_MASK, USB1_HIBERRESET_MASK, USB1_CORERESET_MASK
+    		value = value | RPU_R51_RESET;
     		Xil_Out32(RST_LPD_TOP, value);
     		value = Xil_In32(RST_LPD_TOP);
-    		printf("Reset sequence: 0x%x.\n", value);
+    		printf("To RESET: RST_LPD_TOP: 0x%x.\n", value);
     	}
     	// take R0 from reset
     	else if (cnt == 20){
     		value = Xil_In32(RST_LPD_TOP);
-    		printf("Reset sequence: 0x%x.\n", value);
-    		value = value ^ RPU_R50_RESET;
+    		printf("From RESET: RST_LPD_TOP: 0x%x.\n", value);
+    		//preserve already reseted modules: USB1_APB_RESET_MASK, USB1_HIBERRESET_MASK, USB1_CORERESET_MASK
+    		value = value ^ RPU_R51_RESET;
     		Xil_Out32(RST_LPD_TOP, value);
     		value = Xil_In32(RST_LPD_TOP);
-    		printf("Reset sequence: 0x%x.\n", value);
+    		printf("From RESET: RST_LPD_TOP: 0x%x.\n", value);
     	}
     }
 

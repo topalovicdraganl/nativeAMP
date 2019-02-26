@@ -50,6 +50,14 @@
 #include "xil_printf.h"
 #include "sleep.h"
 #include "xil_io.h"
+#include "xresetps_hw.h"
+
+//https://www.xilinx.com/html_docs/registers/ug1087/ug1087-zynq-ultrascale-registers.html
+#define RST_FPD_APU (XRESETPS_CRF_APB_RST_FPD_APU)
+#define ACPU0_RESET (ACPU0_RESET_MASK)
+#define ACPU1_RESET (ACPU1_RESET_MASK)
+#define ACPU2_RESET (ACPU2_RESET_MASK)
+#define ACPU3_RESET (ACPU3_RESET_MASK)
 
 int main()
 {
@@ -63,21 +71,21 @@ int main()
     	sleep(1);
     	// take APU1 to reset
     	if (cnt == 10){
-    		value = Xil_In32(0xFD1A0104);
-    		printf("Reset sequence: 0x%x.\n", value);
-    		value = 0x3000E;
-    		Xil_Out32(0xFD1A0104, value);
-    		value = Xil_In32(0xFD1A0104);
-    		printf("Reset sequence: 0x%x.\n", value);
+    		value = Xil_In32(RST_FPD_APU);
+    		printf("To RESET: RST_FPD_APU: 0x%x.\n", value);
+    		value = value | ACPU1_RESET;
+    		Xil_Out32(RST_FPD_APU, value);
+    		value = Xil_In32(RST_FPD_APU);
+    		printf("To RESET: RST_FPD_APU: 0x%x.\n", value);
     	}
     	// take APU1 from reset
     	else if (cnt == 20){
-    		value = Xil_In32(0xFD1A0104);
-    		printf("Reset sequence: 0x%x.\n", value);
-    		value = 0x3000C;
-    		Xil_Out32(0xFD1A0104, value);
-    		value = Xil_In32(0xFD1A0104);
-    		printf("Reset sequence: 0x%x.\n", value);
+    		value = Xil_In32(RST_FPD_APU);
+    		printf("From RESET: RST_FPD_APU: 0x%x.\n", value);
+    		value = value ^ ACPU1_RESET;
+    		Xil_Out32(RST_FPD_APU, value);
+    		value = Xil_In32(RST_FPD_APU);
+    		printf("From RESET: RST_FPD_APU: 0x%x.\n", value);
     	}
     }
 
