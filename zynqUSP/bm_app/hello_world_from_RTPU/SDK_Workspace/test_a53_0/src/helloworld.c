@@ -72,7 +72,7 @@ int main()
     		value = Xil_In32(RST_LPD_TOP);
     		printf("To RESET: RST_LPD_TOP: 0x%x.\n", value);
     		//preserve already reseted modules: USB1_APB_RESET_MASK, USB1_HIBERRESET_MASK, USB1_CORERESET_MASK
-    		value = value | RPU_R51_RESET;
+    		value = value | RPU_R50_RESET;
     		Xil_Out32(RST_LPD_TOP, value);
     		value = Xil_In32(RST_LPD_TOP);
     		printf("To RESET: RST_LPD_TOP: 0x%x.\n", value);
@@ -82,7 +82,7 @@ int main()
     		value = Xil_In32(RST_LPD_TOP);
     		printf("From RESET: RST_LPD_TOP: 0x%x.\n", value);
     		//preserve already reseted modules: USB1_APB_RESET_MASK, USB1_HIBERRESET_MASK, USB1_CORERESET_MASK
-    		value = value ^ RPU_R51_RESET;
+    		value = value ^ RPU_R50_RESET;
     		Xil_Out32(RST_LPD_TOP, value);
     		value = Xil_In32(RST_LPD_TOP);
     		printf("From RESET: RST_LPD_TOP: 0x%x.\n", value);
