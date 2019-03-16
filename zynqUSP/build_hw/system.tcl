@@ -193,23 +193,23 @@ proc create_root_design { parentCell } {
 
   # Create ports
 
-  # Create instance: Dual_Timer_Counter_0, and set properties
-  set Dual_Timer_Counter_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 Dual_Timer_Counter_0 ]
+  # Create instance: axi_timer_0, and set properties
+  set axi_timer_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 axi_timer_0 ]
 
-  # Create instance: Dual_Timer_Counter_1, and set properties
-  set Dual_Timer_Counter_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 Dual_Timer_Counter_1 ]
+  # Create instance: axi_timer_1, and set properties
+  set axi_timer_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 axi_timer_1 ]
 
-  # Create instance: Dual_Timer_Counter_2, and set properties
-  set Dual_Timer_Counter_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 Dual_Timer_Counter_2 ]
+  # Create instance: axi_timer_2, and set properties
+  set axi_timer_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 axi_timer_2 ]
 
-  # Create instance: Dual_Timer_Counter_3, and set properties
-  set Dual_Timer_Counter_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 Dual_Timer_Counter_3 ]
+  # Create instance: axi_timer_3, and set properties
+  set axi_timer_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 axi_timer_3 ]
 
-  # Create instance: Dual_Timer_Counter_4, and set properties
-  set Dual_Timer_Counter_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 Dual_Timer_Counter_4 ]
+  # Create instance: axi_timer_4, and set properties
+  set axi_timer_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 axi_timer_4 ]
 
-  # Create instance: Dual_Timer_Counter_5, and set properties
-  set Dual_Timer_Counter_5 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 Dual_Timer_Counter_5 ]
+  # Create instance: axi_timer_5, and set properties
+  set axi_timer_5 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 axi_timer_5 ]
 
   # Create instance: ps8_0_axi_periph, and set properties
   set ps8_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps8_0_axi_periph ]
@@ -1646,34 +1646,34 @@ proc create_root_design { parentCell } {
  ] $zynq_ultra_ps_e_0
 
   # Create interface connections
-  connect_bd_intf_net -intf_net ps8_0_axi_periph_M00_AXI [get_bd_intf_pins Dual_Timer_Counter_0/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M00_AXI]
-  connect_bd_intf_net -intf_net ps8_0_axi_periph_M01_AXI [get_bd_intf_pins Dual_Timer_Counter_1/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M01_AXI]
-  connect_bd_intf_net -intf_net ps8_0_axi_periph_M02_AXI [get_bd_intf_pins Dual_Timer_Counter_2/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M02_AXI]
-  connect_bd_intf_net -intf_net ps8_0_axi_periph_M03_AXI [get_bd_intf_pins Dual_Timer_Counter_3/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M03_AXI]
-  connect_bd_intf_net -intf_net ps8_0_axi_periph_M04_AXI [get_bd_intf_pins Dual_Timer_Counter_4/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M04_AXI]
-  connect_bd_intf_net -intf_net ps8_0_axi_periph_M05_AXI [get_bd_intf_pins Dual_Timer_Counter_5/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M05_AXI]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M00_AXI [get_bd_intf_pins axi_timer_0/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M00_AXI]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M01_AXI [get_bd_intf_pins axi_timer_1/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M02_AXI [get_bd_intf_pins axi_timer_2/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M02_AXI]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M03_AXI [get_bd_intf_pins axi_timer_3/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M03_AXI]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M04_AXI [get_bd_intf_pins axi_timer_4/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M04_AXI]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M05_AXI [get_bd_intf_pins axi_timer_5/S_AXI] [get_bd_intf_pins ps8_0_axi_periph/M05_AXI]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_0_M_AXI_HPM0_LPD [get_bd_intf_pins ps8_0_axi_periph/S00_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_LPD]
 
   # Create port connections
-  connect_bd_net -net Dual_Timer_Counter_0_interrupt [get_bd_pins Dual_Timer_Counter_0/interrupt] [get_bd_pins ps_intr_lconcat/In0]
-  connect_bd_net -net Dual_Timer_Counter_1_interrupt [get_bd_pins Dual_Timer_Counter_1/interrupt] [get_bd_pins ps_intr_lconcat/In1]
-  connect_bd_net -net Dual_Timer_Counter_2_interrupt [get_bd_pins Dual_Timer_Counter_2/interrupt] [get_bd_pins ps_intr_lconcat/In2]
-  connect_bd_net -net Dual_Timer_Counter_3_interrupt [get_bd_pins Dual_Timer_Counter_3/interrupt] [get_bd_pins ps_intr_lconcat/In3]
-  connect_bd_net -net Dual_Timer_Counter_4_interrupt [get_bd_pins Dual_Timer_Counter_4/interrupt] [get_bd_pins ps_intr_lconcat/In4]
-  connect_bd_net -net Dual_Timer_Counter_5_interrupt [get_bd_pins Dual_Timer_Counter_5/interrupt] [get_bd_pins ps_intr_lconcat/In5]
+  connect_bd_net -net axi_timer_0_interrupt [get_bd_pins axi_timer_0/interrupt] [get_bd_pins ps_intr_lconcat/In0]
+  connect_bd_net -net axi_timer_1_interrupt [get_bd_pins axi_timer_1/interrupt] [get_bd_pins ps_intr_lconcat/In1]
+  connect_bd_net -net axi_timer_2_interrupt [get_bd_pins axi_timer_2/interrupt] [get_bd_pins ps_intr_lconcat/In2]
+  connect_bd_net -net axi_timer_3_interrupt [get_bd_pins axi_timer_3/interrupt] [get_bd_pins ps_intr_lconcat/In3]
+  connect_bd_net -net axi_timer_4_interrupt [get_bd_pins axi_timer_4/interrupt] [get_bd_pins ps_intr_lconcat/In4]
+  connect_bd_net -net axi_timer_5_interrupt [get_bd_pins axi_timer_5/interrupt] [get_bd_pins ps_intr_lconcat/In5]
   connect_bd_net -net ps_intr_lconcat_dout [get_bd_pins ps_intr_lconcat/dout] [get_bd_pins zynq_ultra_ps_e_0/pl_ps_irq0]
   connect_bd_net -net rst_ps8_0_96M_interconnect_aresetn [get_bd_pins ps8_0_axi_periph/ARESETN] [get_bd_pins rst_ps8_0_96M/interconnect_aresetn]
-  connect_bd_net -net rst_ps8_0_96M_peripheral_aresetn [get_bd_pins Dual_Timer_Counter_0/s_axi_aresetn] [get_bd_pins Dual_Timer_Counter_1/s_axi_aresetn] [get_bd_pins Dual_Timer_Counter_2/s_axi_aresetn] [get_bd_pins Dual_Timer_Counter_3/s_axi_aresetn] [get_bd_pins Dual_Timer_Counter_4/s_axi_aresetn] [get_bd_pins Dual_Timer_Counter_5/s_axi_aresetn] [get_bd_pins ps8_0_axi_periph/M00_ARESETN] [get_bd_pins ps8_0_axi_periph/M01_ARESETN] [get_bd_pins ps8_0_axi_periph/M02_ARESETN] [get_bd_pins ps8_0_axi_periph/M03_ARESETN] [get_bd_pins ps8_0_axi_periph/M04_ARESETN] [get_bd_pins ps8_0_axi_periph/M05_ARESETN] [get_bd_pins ps8_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps8_0_96M/peripheral_aresetn]
-  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins Dual_Timer_Counter_0/s_axi_aclk] [get_bd_pins Dual_Timer_Counter_1/s_axi_aclk] [get_bd_pins Dual_Timer_Counter_2/s_axi_aclk] [get_bd_pins Dual_Timer_Counter_3/s_axi_aclk] [get_bd_pins Dual_Timer_Counter_4/s_axi_aclk] [get_bd_pins Dual_Timer_Counter_5/s_axi_aclk] [get_bd_pins ps8_0_axi_periph/ACLK] [get_bd_pins ps8_0_axi_periph/M00_ACLK] [get_bd_pins ps8_0_axi_periph/M01_ACLK] [get_bd_pins ps8_0_axi_periph/M02_ACLK] [get_bd_pins ps8_0_axi_periph/M03_ACLK] [get_bd_pins ps8_0_axi_periph/M04_ACLK] [get_bd_pins ps8_0_axi_periph/M05_ACLK] [get_bd_pins ps8_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps8_0_96M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
+  connect_bd_net -net rst_ps8_0_96M_peripheral_aresetn [get_bd_pins axi_timer_0/s_axi_aresetn] [get_bd_pins axi_timer_1/s_axi_aresetn] [get_bd_pins axi_timer_2/s_axi_aresetn] [get_bd_pins axi_timer_3/s_axi_aresetn] [get_bd_pins axi_timer_4/s_axi_aresetn] [get_bd_pins axi_timer_5/s_axi_aresetn] [get_bd_pins ps8_0_axi_periph/M00_ARESETN] [get_bd_pins ps8_0_axi_periph/M01_ARESETN] [get_bd_pins ps8_0_axi_periph/M02_ARESETN] [get_bd_pins ps8_0_axi_periph/M03_ARESETN] [get_bd_pins ps8_0_axi_periph/M04_ARESETN] [get_bd_pins ps8_0_axi_periph/M05_ARESETN] [get_bd_pins ps8_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps8_0_96M/peripheral_aresetn]
+  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_timer_1/s_axi_aclk] [get_bd_pins axi_timer_2/s_axi_aclk] [get_bd_pins axi_timer_3/s_axi_aclk] [get_bd_pins axi_timer_4/s_axi_aclk] [get_bd_pins axi_timer_5/s_axi_aclk] [get_bd_pins ps8_0_axi_periph/ACLK] [get_bd_pins ps8_0_axi_periph/M00_ACLK] [get_bd_pins ps8_0_axi_periph/M01_ACLK] [get_bd_pins ps8_0_axi_periph/M02_ACLK] [get_bd_pins ps8_0_axi_periph/M03_ACLK] [get_bd_pins ps8_0_axi_periph/M04_ACLK] [get_bd_pins ps8_0_axi_periph/M05_ACLK] [get_bd_pins ps8_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps8_0_96M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
   connect_bd_net -net zynq_ultra_ps_e_0_pl_resetn0 [get_bd_pins rst_ps8_0_96M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e_0/pl_resetn0]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00001000 -offset 0x80000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs Dual_Timer_Counter_0/S_AXI/Reg] SEG_Dual_Timer_Counter_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80001000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs Dual_Timer_Counter_1/S_AXI/Reg] SEG_Dual_Timer_Counter_1_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80002000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs Dual_Timer_Counter_2/S_AXI/Reg] SEG_Dual_Timer_Counter_2_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80003000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs Dual_Timer_Counter_3/S_AXI/Reg] SEG_Dual_Timer_Counter_3_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80004000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs Dual_Timer_Counter_4/S_AXI/Reg] SEG_Dual_Timer_Counter_4_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80005000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs Dual_Timer_Counter_5/S_AXI/Reg] SEG_Dual_Timer_Counter_5_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs axi_timer_0/S_AXI/Reg] SEG_axi_timer_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80001000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs axi_timer_1/S_AXI/Reg] SEG_axi_timer_1_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80002000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs axi_timer_2/S_AXI/Reg] SEG_axi_timer_2_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80003000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs axi_timer_3/S_AXI/Reg] SEG_axi_timer_3_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80004000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs axi_timer_4/S_AXI/Reg] SEG_axi_timer_4_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80005000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs axi_timer_5/S_AXI/Reg] SEG_axi_timer_5_Reg
 
 
   # Restore current instance
