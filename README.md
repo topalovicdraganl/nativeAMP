@@ -3,8 +3,9 @@
 One solution of Unsupervised AMP, concept where multiple operating systems or bare-metal applications run on individual CPU cores.
 
 ## Examples:
-1. `hello_world_from_APU`, represent model where APU0 control APU1 execution using CRF_APB.RST_FPD_APU register.
-2. `hello_world_from_RTPU`, represent model where APU0 control R0 execution using CRF_APB.RST_LPD_TOP register.
+1. `hello_world_from_APU`, represent example where APU0 control APU1 execution using CRF_APB.RST_FPD_APU register.
+2. `hello_world_from_RTPU`, represent example where APU0 control R0 execution using CRF_APB.RST_LPD_TOP register.
+3. `hello_world_from_APU_and_RTPU`, represent example where APU0 control APU1 and R0 execution.
 
 ## Provided examples are based on fallowing tutorials:
 1. [ug1209 Embedded Design Tutorial](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_3/ug1209-embedded-design-tutorial.pdf)
